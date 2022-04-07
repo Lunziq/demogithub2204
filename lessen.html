@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eerste HTML</title>
+
+    <style>
+        .test{
+            color: blue;         
+        }
+
+
+
+    </style>
+    <script>
+
+            var vijftig = 0;
+            var twintig = 0;
+            var tien = 0;
+            var vijf = 0;
+            var twee = 0;
+            var een = 0;
+        
+        function starten(){
+            
+            var test = document.getElementById("invoerveld").value;
+            var testGetal = parseInt(test);
+        
+            geldTellen(test)
+
+            document.getElementById("uitvoer").classList.add("test");
+            document.getElementById("uitvoer").innerHTML = "Het geld wordt verdeelt in: " + vijftig + " briefjes van 50, " + twintig + " briefjes van 20, " + tien + " briefjes van 10, " + vijf + " briefjes van vijf, " + twee + " muntjes van twee, en " + een + " Muntjes van een";
+
+            reset();
+
+
+        }
+        function geldTellen(getal)
+        {
+            var temp = getal;
+            while(getal > 0)
+            {
+                while (getal >= 50)
+            {
+                    vijftig ++
+                    getal -= 50;
+            }
+                while (getal >= 20)
+                {
+                    twintig ++
+                    getal -= 20;
+                }
+                while (getal >= 10)
+                {
+                    tien ++
+                    getal -= 10;
+                }
+                while (getal >= 5)
+                {
+                    vijf ++
+                    getal -= 5;
+                }
+                while (getal >= 2)
+                {
+                    twee ++
+                    getal -= 2;
+                }
+                while (getal >= 1)
+                {
+                    een ++
+                    getal -= 1;
+                }
+            }
+            
+
+
+            
+        }
+
+        function reset()
+        {
+            vijftig = 0;
+            twintig = 0;
+            tien = 0;
+            vijf = 0;
+            twee = 0;
+            een = 0;
+        }
+        
+    </script>
+</head>
+<body>
+    <input type="button" value="Geld verdelen" onclick="starten()">
+    <input type="text" id="invoerveld">
+    <div id="uitvoer"></div>
+    
+</body>
+</html>
